@@ -38,6 +38,11 @@ view: order_items {
     sql: ${TABLE}.delivered_at ;;
   }
 
+  dimension: delivery_days {
+    type: number
+    sql: DATE_DIFF(${created_date},${delivered_date},DAY) ;;
+  }
+
   # Here's what a typical dimension looks like in LookML.
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "ID" in Explore.
