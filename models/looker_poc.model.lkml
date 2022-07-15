@@ -38,6 +38,11 @@ explore: orders {
   }
 
 explore: order_items {
+ conditionally_filter:{
+    filters: [order_items.created_year: "2021"]
+    unless: [order_items.created_month]
+ }
+
   join: users {
     type: left_outer
     sql_on: ${order_items.user_id}=${users.id} ;;
