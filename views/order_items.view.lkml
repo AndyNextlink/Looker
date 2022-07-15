@@ -40,7 +40,7 @@ view: order_items {
 
   dimension: delivery_days {
     type: number
-    sql: DATE_DIFF(${created_date},${delivered_date},DAY) ;;
+    sql: DATE_DIFF(${delivered_date},${created_date},DAY) ;;
   }
 
   # Here's what a typical dimension looks like in LookML.
