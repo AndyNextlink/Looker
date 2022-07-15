@@ -98,7 +98,7 @@ view: order_items {
     type: sum
     sql: ${sale_price} ;;
     filters: [status: "Cancelled"]
-    value_format_name: usd
+    value_format_name: usd_0
   }
 
   measure: total_sale_price {
