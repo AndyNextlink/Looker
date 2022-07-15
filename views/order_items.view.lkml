@@ -87,6 +87,20 @@ view: order_items {
     sql: ${TABLE}.sale_price ;;
   }
 
+  measure: total_revenue_from_completed_orders{
+    type: sum
+    sql: ${sale_price};;
+    filters: [status: "Complete"]
+    value_format_name: usd
+  }
+
+  measure: total_revenue_from_cancelled_orders {
+    type: sum
+    sql: ${sale_price} ;;
+    filters: [status: "Cancelled"]
+    value_format_name: usd
+  }
+
   measure: total_sale_price {
     type: sum
     value_format: "$#.00"
