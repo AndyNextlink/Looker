@@ -23,7 +23,7 @@ view: pop_arbitrary {
     view_label: "_PoP"
     hidden: yes
     type: number
-    sql: date_diff('day',  {% date_start first_period_filter %}, ${created_date}) ;;
+    sql: date_diff({% date_start first_period_filter %}, ${created_date},'day') ;;
   }
 
   dimension: days_from_start_second {
