@@ -84,3 +84,10 @@ explore: distribution_centers {}
 explore: products {}
 
 explore: users {}
+
+explore: pop_arbitrary {
+  label: "PoP Method 6: Compare two arbitrary date ranges"
+  always_filter: {
+    filters: [first_period_filter: "NOT NULL", second_period_filter: "NOT NULL", period_selected:"-NULL"]
+  }
+}
