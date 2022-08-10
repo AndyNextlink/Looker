@@ -23,14 +23,14 @@ view: pop_arbitrary {
     view_label: "_PoP"
     hidden: yes
     type: number
-    sql: DATEDIFF('day',  {% date_start first_period_filter %}, ${created_date}) ;;
+    sql: date_diff('day',  {% date_start first_period_filter %}, ${created_date}) ;;
   }
 
   dimension: days_from_start_second {
     view_label: "_PoP"
     hidden: yes
     type: number
-    sql: DATEDIFF('day',  {% date_start second_period_filter %}, ${created_date}) ;;
+    sql: date_diff('day',  {% date_start second_period_filter %}, ${created_date}) ;;
   }
 
   ## ------------------ DIMENSIONS TO PLOT ------------------ ##
