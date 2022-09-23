@@ -136,4 +136,10 @@ view: order_items {
     drill_fields: []
   }
 
+  measure: sum_distinct {
+    type: sum_distinct
+    sql_distinct_key: ${order_id} ;;
+    sql: ${sale_price} ;;
+  }
+
 }
