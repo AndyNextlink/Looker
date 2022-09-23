@@ -16,6 +16,8 @@ view: products {
     sql: ${TABLE}.brand ;;
   }
 
+  #noteee
+
   dimension: category {
     type: string
     sql: ${TABLE}.category ;;

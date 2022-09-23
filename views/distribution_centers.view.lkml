@@ -16,6 +16,11 @@ view: distribution_centers {
     sql: ${TABLE}.id ;;
   }
 
+  dimension: id_test {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: latitude {
     type: number
     sql: ${TABLE}.latitude ;;

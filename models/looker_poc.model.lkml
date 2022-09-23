@@ -3,6 +3,7 @@ connection: "looker_poc"
 
 # include all the views
 include: "/views/**/*.view"
+include: "/**/*.dashboard"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
@@ -38,6 +39,11 @@ explore: orders {
   }
 
 explore: order_items {
+ conditionally_filter:{
+    filters: [order_items.created_year: "2021"]
+    unless: [order_items.created_month]
+ }
+
   join: users {
     type: left_outer
     sql_on: ${order_items.user_id}=${users.id} ;;
@@ -78,3 +84,10 @@ explore: distribution_centers {}
 explore: products {}
 
 explore: users {}
+
+explore: pop_arbitrary {
+  label: "PoP Method 6: Compare two arbitrary date ranges"
+  always_filter: {
+    filters: [first_period_filter: "NOT NULL", second_period_filter: "NOT NULL", period_selected:"-NULL"]
+  }
+}
